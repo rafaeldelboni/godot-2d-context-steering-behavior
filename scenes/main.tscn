@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk3be3mqtpfqb"]
+
+[ext_resource type="PackedScene" uid="uid://cmwaqbmwo0382" path="res://scenes/steering_entity.tscn" id="1_0ubdx"]
+[ext_resource type="PackedScene" uid="uid://mky5j065gfnn" path="res://scenes/poi.tscn" id="2_86cut"]
+
+[node name="Main" type="Node2D"]
+
+[node name="SteeringEntity" parent="." instance=ExtResource("1_0ubdx")]
+position = Vector2(572, 347)
+
+[node name="Interests" type="Node2D" parent="."]
+
+[node name="POI" parent="Interests" instance=ExtResource("2_86cut")]
+position = Vector2(122, 315)
+
+[node name="POI1" parent="Interests" instance=ExtResource("2_86cut")]
+position = Vector2(339, 48)

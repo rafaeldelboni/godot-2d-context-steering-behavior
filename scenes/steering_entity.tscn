@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmwaqbmwo0382"]
+
+[ext_resource type="Script" path="res://scripts/SteeringEntity.gd" id="1_284a6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77xgl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_d0ijo"]
+
+[sub_resource type="Gradient" id="Gradient_gqw80"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.420694, 0.846187, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mqhmp"]
+gradient = SubResource("Gradient_gqw80")
+
+[node name="SteeringEntity" type="CharacterBody2D"]
+position = Vector2(600, 308)
+script = ExtResource("1_284a6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_77xgl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionShape2D"]
+scale = Vector2(20.023, 20)
+mesh = SubResource("SphereMesh_d0ijo")
+texture = SubResource("GradientTexture2D_mqhmp")
